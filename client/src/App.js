@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Search from "./containers/Search";
+import OverallContainer from "./containers/OverallContainer.js";
 
 class App extends Component {
   render() {
-    return <Search />;
+    return <OverallContainer />;
   }
 }
 

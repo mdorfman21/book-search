@@ -25,10 +25,9 @@ class Search extends React.Component {
     this.setState({ ...this.state, [name]: value });
   };
 
-  saveToDatabase = (title, description, authors) => {
-    console.log("title:", title);
-    console.log("description:", description);
-    console.log("authors:", authors);
+  saveToDatabase = (title, description, authors, imageSrc) => {
+    const bookData = { title, description, authors, imageSrc };
+    API.saveBook(bookData);
   };
 
   render() {
@@ -50,12 +49,14 @@ class Search extends React.Component {
                   this.saveToDatabase(
                     book.volumeInfo.title,
                     book.volumeInfo.description,
-                    book.volumeInfo.authors
+                    book.volumeInfo.authors,
+                    book.volumeInfo.imageLinks.thumbnail
                   );
                 }}
                 authors={book.volumeInfo.authors}
                 src={book.volumeInfo.imageLinks.thumbnail}
                 description={book.volumeInfo.description}
+                buttonName="save"
               />
             ))
           : "No Results Yet"}

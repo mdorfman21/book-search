@@ -9,6 +9,7 @@ function Button(props) {
         title={props.title}
         authors={props.authors}
         description={props.description}
+        value={props.buttonValue}
       >
         {props.name}
       </button>

@@ -41,10 +41,10 @@ function Books(props) {
         {properGrammer} {useAuthors}
       </h4>
       <p>Description: {props.description}</p>
-      <Button {...props} name="save" />
       <span>
         <img src={props.src} alt={props.title} />
       </span>
+      <Button {...props} name={props.buttonName} />
     </div>
   );
 }
